@@ -67,7 +67,7 @@ export const fetchContactForms = async (token) => {
   return response.data;
 };
 
-// Create pet (admin)
+// Create pet  - (admin)
 export const createPet = async (formData, token) => {
   const response = await axios.post(`${API_BASE_URL}/pets`, formData, {
     headers: {
@@ -78,7 +78,7 @@ export const createPet = async (formData, token) => {
   return response.data;
 };
 
-// Update pet (admin)
+// Update pet - (admin)
 export const updatePet = async (id, formData, token) => {
   const response = await axios.put(`${API_BASE_URL}/pets/${id}`, formData, {
     headers: {
