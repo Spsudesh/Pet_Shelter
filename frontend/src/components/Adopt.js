@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import "./Adopt.css";
 import {
-  fetchPets, fetchUser, submitAdoptionForm, fetchUserRequestsByToken, imageUrl,
+  fetchPets, fetchUser, submitAdoptionForm, fetchUserRequestsByToken,
 } from "./API";
 import logo from "../Images/logo.png";
 
@@ -22,6 +22,12 @@ function Adopt({ user, onLogout }) {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
+  const loadMyRequests = useCallback(() => {
+    fetchUserRequestsByToken(user.token)
+      .then(setMyRequests)
+      .catch(console.error);
+  }, [user.token]);
+
   useEffect(() => {
     fetchPets().then(setPets).catch(console.error);
     if (user && user.token) {
@@ -37,13 +43,7 @@ function Adopt({ user, onLogout }) {
         .catch(console.error);
       loadMyRequests();
     }
-  }, [user]);
-
-  const loadMyRequests = () => {
-    fetchUserRequestsByToken(user.token)
-      .then(setMyRequests)
-      .catch(console.error);
-  };
+  }, [user, loadMyRequests]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

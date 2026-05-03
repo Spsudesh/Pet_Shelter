@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Home.css";
 import "./Admin.css";
@@ -12,18 +12,18 @@ function Admin({ user, onLogout }) {
   const [enquiries, setEnquiries] = useState([]);
   const navigate = useNavigate();
 
+  const loadPets = useCallback(() => {
+    fetchPets().then(setPets).catch(console.error);
+  }, []);
+
+  const loadEnquiries = useCallback(() => {
+    fetchContactForms(user.token).then(setEnquiries).catch(console.error);
+  }, [user.token]);
+
   useEffect(() => {
     loadPets();
     loadEnquiries();
-  }, []);
-
-  const loadPets = () => {
-    fetchPets().then(setPets).catch(console.error);
-  };
-
-  const loadEnquiries = () => {
-    fetchContactForms(user.token).then(setEnquiries).catch(console.error);
-  };
+  }, [loadPets, loadEnquiries]);
 
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this pet?")) return;
