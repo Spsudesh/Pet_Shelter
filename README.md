@@ -161,6 +161,20 @@ npm start
 
 The React app will open at: **http://localhost:3000**
 
+Frontend environment variables:
+
+```env
+REACT_APP_API_ORIGIN=http://localhost:5000
+REACT_APP_API_BASE_URL=http://localhost:5000/api
+```
+
+For Vercel, set them to your Render backend URL, for example:
+
+```env
+REACT_APP_API_ORIGIN=https://your-render-backend.onrender.com
+REACT_APP_API_BASE_URL=https://your-render-backend.onrender.com/api
+```
+
 ---
 
 ## 🔑 Default Admin Credentials

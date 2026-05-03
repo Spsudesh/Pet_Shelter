@@ -1,7 +1,12 @@
 import axios from "axios";
 
-export const API_BASE_URL = "http://localhost:5000/api";
-export const API_ORIGIN = "http://localhost:5000";
+const trimTrailingSlash = (value) => value?.replace(/\/+$/, "") || "";
+
+const envApiOrigin = trimTrailingSlash(process.env.REACT_APP_API_ORIGIN);
+const envApiBaseUrl = trimTrailingSlash(process.env.REACT_APP_API_BASE_URL);
+
+export const API_ORIGIN = envApiOrigin || "http://localhost:5000";
+export const API_BASE_URL = envApiBaseUrl || `${API_ORIGIN}/api`;
 
 export const imageUrl = (path) => {
   if (!path) return "";
