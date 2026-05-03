@@ -2,6 +2,7 @@
 
 > **React + Node.js + Express + MongoDB**  
 > A complete pet adoption management system.
+<<<<<<< HEAD
 
 ---
 
@@ -264,3 +265,5 @@ REACT_APP_API_BASE_URL=https://your-render-backend.onrender.com/api
 - User sessions stored in `localStorage` under key `user`
 - Admin is auto-seeded on backend startup
 - The `/me` adoption route is defined **before** `/:id` to prevent route shadowing
+=======
+>>>>>>> a60e49e343b0704caa1de76eb38c52e4e2be9f38

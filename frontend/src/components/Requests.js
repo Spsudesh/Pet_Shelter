@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import "./Requests.css";
@@ -9,13 +9,13 @@ function Requests({ user, onLogout }) {
   const [requests, setRequests] = useState([]);
   const [search, setSearch] = useState("");
 
+  const loadRequests = useCallback(() => {
+    fetchAdoptionRequests(user.token).then(setRequests).catch(console.error);
+  }, [user.token]);
+
   useEffect(() => {
     loadRequests();
-  }, []);
-
-  const loadRequests = () => {
-    fetchAdoptionRequests(user.token).then(setRequests).catch(console.error);
-  };
+  }, [loadRequests]);
 
   const handleStatus = async (id, status) => {
     try {
