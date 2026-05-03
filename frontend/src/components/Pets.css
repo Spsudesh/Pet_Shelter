@@ -1,0 +1,30 @@
+.pets-page-header {
+  margin: 26px 40px 0;
+  padding: 34px 28px;
+  text-align: center;
+  border-radius: 30px;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 243, 0.86), rgba(239, 231, 220, 0.92)),
+    linear-gradient(135deg, rgba(47, 107, 95, 0.06), rgba(197, 111, 75, 0.08));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+.pets-page-header h2 {
+  font-size: 2.7rem;
+  margin-bottom: 12px;
+}
+
+.pets-page-header p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto 22px;
+  line-height: 1.75;
+}
+
+@media (max-width: 920px) {
+  .pets-page-header {
+    margin: 22px 24px 0;
+  }
+}

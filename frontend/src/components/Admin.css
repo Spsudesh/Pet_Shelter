@@ -1,0 +1,130 @@
+.admin-page {
+  padding: 44px 40px 60px;
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+
+.admin-header h2 {
+  font-size: 2.45rem;
+}
+
+.admin-controls {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.admin-search {
+  min-width: 260px;
+}
+
+.admin-pet-card {
+  cursor: default;
+}
+
+.admin-pet-card:hover {
+  transform: none;
+}
+
+.admin-card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.btn-delete,
+.btn-reject {
+  background: linear-gradient(135deg, var(--danger), #9d4540);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 14px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  box-shadow: 0 12px 22px rgba(185, 93, 88, 0.2);
+  transition: 0.25s ease;
+}
+
+.btn-delete:hover,
+.btn-reject:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 28px rgba(185, 93, 88, 0.24);
+}
+
+.enquiries-section {
+  margin-top: 52px;
+}
+
+.enquiries-section h3 {
+  font-size: 1.9rem;
+  margin-bottom: 16px;
+}
+
+.enquiries-table-wrapper {
+  overflow-x: auto;
+}
+
+.enquiries-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.enquiries-table th {
+  background: rgba(47, 107, 95, 0.09);
+  color: var(--heading);
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.enquiries-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(91, 79, 66, 0.08);
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+.enquiries-table tr:last-child td {
+  border-bottom: none;
+}
+
+.enquiries-table tr:hover td {
+  background: rgba(47, 107, 95, 0.04);
+}
+
+.badge-new {
+  background: rgba(47, 107, 95, 0.12);
+  color: var(--primary);
+}
+
+.badge-read {
+  background: rgba(59, 123, 99, 0.14);
+  color: var(--success);
+}
+
+.badge-contacted {
+  background: rgba(197, 111, 75, 0.14);
+  color: var(--secondary-strong);
+}
+
+@media (max-width: 920px) {
+  .admin-page {
+    padding: 36px 24px 50px;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

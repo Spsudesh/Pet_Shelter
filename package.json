@@ -1,0 +1,13 @@
+{
+  "name": "pet-shelter",
+  "version": "1.0.0",
+  "description": "Pet Shelter - Full Stack App (React + Node + MongoDB)",
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm start",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start"
+  },
+  "private": true
+}

@@ -1,0 +1,8 @@
+/* SignUp uses the shared Login.css styles */
+/* This file is intentionally minimal - all shared auth styles are in Login.css */
+
+.signup-name-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
